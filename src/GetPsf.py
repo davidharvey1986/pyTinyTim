@@ -2,11 +2,12 @@
 Run RRG on the image and get the PSF image of the
 exposure in question at the RA and dec of the target
 '''
-import tinytim as tt
+
 import pyRRG as RRG
 import os as os
 import pyfits as fits
 from parseGalaxyList import *
+import sys
 def main( hstFilter='F814W'):
     GalaxyList = parseGalaxyList( filename='Galaxies.lis', \
                                       hstFilter=hstFilter)
@@ -45,4 +46,4 @@ def measurePSF( TargetDir,TargetImage ):
         os.chdir(codeDir)
         raise
  
-                      
+                    
