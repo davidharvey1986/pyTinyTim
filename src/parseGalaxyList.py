@@ -9,6 +9,8 @@ def parseGalaxyList( filename='Galaxies.lis'):
     
     
     data = np.loadtxt(filename, dtype=object,skiprows=1)
+    if len(data.shape) == 1:
+        data = data[np.newaxis,...]
     filterList = data[:,16]
 
     dtype = [('Target', object), ('Filter',object), \
@@ -22,12 +24,12 @@ def parseGalaxyList( filename='Galaxies.lis'):
     
         raDEG, decDEG = at.hmstodd(RaHMS, DecHMS)
 
-        BothHstFilters = data[iImage,16].split(';')
-        whichNotClear = [ not 'CLEAR' in i for i in BothHstFilters]
-        hstFilter=bothHstFilters[whichNotClear]
-        print hstFilter
+        bothHstFilters = np.array(data[iImage,16].split(';'))
+        whichNotClear = [ not 'CLEAR' in i for i in bothHstFilters]
+        hstFilter=bothHstFilters[whichNotClear][0]
 
-        iEntry = np.array((data[iImage,1],hstFilter, raDEG,decDEG), dtype=dtype)
+        iEntry = np.array((data[iImage,1],hstFilter, raDEG,decDEG), \
+                              dtype=dtype)
         parsedData = np.append(parsedData, iEntry)
 
 

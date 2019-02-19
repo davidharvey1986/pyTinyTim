@@ -1,6 +1,5 @@
 import os as os
 import subprocess as process
-import ipdb as pdb
 
 def run(x, y, **args):
 
@@ -42,5 +41,6 @@ def run(x, y, **args):
     args_string.append("coordfile='"+code_dir+"/coordfile.TT'")
     args_list = ','.join(args_string)
     command_str ='idl -e "tinytim_create,'+args_list+'"'
+
     os.system(command_str)
     print 'DONE'

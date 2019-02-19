@@ -1,9 +1,11 @@
+from pyTinyTim import *
 import os as os
 import glob as glob
 import ipdb as pdb
 def tinytim_main( cluster, filterName, ra=None, dec=None,
                       pixel_scale=0.03,
-                      drizzle_kernel='square'):
+                      drizzle_kernel='square',\
+                      dataDir='.'):
     '''
 
     This is the final script that determines a grid of star positions
@@ -20,20 +22,18 @@ def tinytim_main( cluster, filterName, ra=None, dec=None,
 
     #1. get coordinates
     if ra is None:
-        ra, dec = tinytim_radec_grid( cluster )
+        ra, dec = tinytim_radec_grid( cluster, filterName,\
+                                             data_dir=dataDir )
 
     #2. get stars
-    tinytim_flt( cluster, filterName, \
+    tinytim_flt( cluster, filterName, dataDir=dataDir, \
                         ra=ra, dec=dec, pixel_scale=pixel_scale  )
 
     #Change the header
-    tinytim_change_header( cluster )
+    tinytim_change_header( cluster, dataDir=dataDir )
 
     #. redrizzle
-    tinytim_drizzle( cluster,
+    tinytim_drizzle( cluster, filterName, dataDir=dataDir,
                             pixel_scale=pixel_scale,
                             drizzle_kernel=drizzle_kernel )
-
-
-
 

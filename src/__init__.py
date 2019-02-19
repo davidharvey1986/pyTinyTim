@@ -3,7 +3,4 @@ from tinytim_drizzle import *
 from tinytim_radec_grid import *
 from tinytim_change_header import *
 from tinytim_flt import * 
-from postage_stamp import *
-from plotGalaxy import *
-from parseGalaxyList import *
-from getPsf import *
+from tinytim import *

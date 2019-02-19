@@ -1,6 +1,5 @@
 from pyHST import drizzle as drizzle
 import tinytim_change_header as tt_flt
-import ipdb as pdb
 import glob as glob
 import numpy as np
 from subprocess import call
@@ -8,7 +7,7 @@ import os as os
 import numpy as np
 import pyfits as fits
 
-def tinytim_drizzle( cluster, combine_type='iminmed', output=None,
+def tinytim_drizzle( cluster, hstFilter, combine_type='iminmed', output=None,
                          drizzle_kernel='square',
                          pixel_scale=0.03, dataDir='./'):
 
@@ -16,7 +15,7 @@ def tinytim_drizzle( cluster, combine_type='iminmed', output=None,
         
     #Make sure it is a filter!
     
-    TT_dir = 'TinyTim/'
+    TT_dir = dataDir+'/TinyTim/'
 
     os.system( 'mkdir -p '+TT_dir+'/redrizzle' )
         
@@ -32,15 +31,11 @@ def tinytim_drizzle( cluster, combine_type='iminmed', output=None,
     input_str = TT_dir+'/*q_flt.fits'
 
     if output is None:
-        output = TT_dir+'/redrizzle/'+cluster+'_TT'
+        output = TT_dir+'/redrizzle/'+cluster+'_'+hstFilter+'_TT'
     thresh=1.0
     search_rad=1.0
     
-    if fits.__version__ != '3.1.6':
-        raise ImportError('Not the correct version of pyfits, needs 3.1.6')
-    if np.__version__ != '1.11.0':
-        raise ImportError('Not the correct version of numpy, needs 1.11.0')
-        
+ 
     drizzle.astrodrizzle.AstroDrizzle( input_str, \
                                             output=output, \
                                             final_scale=pixel_scale, \

@@ -1,6 +1,5 @@
 import drizzlepac 
 import numpy as np
-import ipdb as pdb
 import glob as glob
 import tinytim_run as tinytim_run
 import tinytim_change_header as tt_header

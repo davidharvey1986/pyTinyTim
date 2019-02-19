@@ -8,8 +8,9 @@ import os as os
 import pyfits as fits
 from parseGalaxyList import *
 import sys
+from pyTinyTim import *
 def main( galaxyList='Galaxies.lis'):
-    GalaxyList = parseGalaxyList( filename=galaxyList))
+    GalaxyList = parseGalaxyList( filename=galaxyList)
 
         
     for iGalaxy in GalaxyList:
@@ -29,7 +30,7 @@ def getPSF( galaxy ):
     
     if not os.path.isfile(psfFile):
         print galaxy['Target'], galaxy['RA'], galaxy['DEC']
-        tt.tinytim_main( galaxy['Target'], \
+        tinytim_main( galaxy['Target'], \
                             galaxy['Filter'], \
                         ra=[galaxy['RA']], \
                         dec=[galaxy['DEC']],\
