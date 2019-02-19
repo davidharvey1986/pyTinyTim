@@ -1,4 +1,3 @@
-import tinytim as TT
 import os as os
 import glob as glob
 import ipdb as pdb
@@ -23,17 +22,17 @@ def tinytim_main( cluster, filterName, ra=None, dec=None,
     #setup_environment( cluster)
     #1. get coordinates
     if ra is None:
-        ra, dec = TT.tinytim_radec_grid( cluster )
+        ra, dec = tinytim_radec_grid( cluster )
 
     #2. get stars
-    TT.tinytim_flt( cluster, filterName, \
+    tinytim_flt( cluster, filterName, \
                         ra=ra, dec=dec, pixel_scale=pixel_scale  )
 
     #Change the header
-    TT.tinytim_change_header( cluster )
+    tinytim_change_header( cluster )
 
     #. redrizzle
-    TT.tinytim_drizzle( cluster,
+    tinytim_drizzle( cluster,
                             pixel_scale=pixel_scale,
                             drizzle_kernel=drizzle_kernel )
 

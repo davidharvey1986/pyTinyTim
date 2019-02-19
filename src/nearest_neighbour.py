@@ -1,6 +1,6 @@
 import numpy as np
 import ipdb as pdb
-import astro_tools as tools
+import RRGtools as tools
 def nearest_neighbour(  x, y):
 
     '''

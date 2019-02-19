@@ -1,6 +1,6 @@
 import glob as glob
 import pyfits as py
-import astro_tools as at
+import RRGtools as at
 import numpy as np
 import ipdb as pdb
 def tinytim_radec_grid( cluster, n_stars=25, datadir=None):
