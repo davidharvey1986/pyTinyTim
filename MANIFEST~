@@ -1,7 +1,3 @@
-src
-lib
-lib/cCode
-lib/IDL
 src/GetPsf.py
 src/__init__.py
 src/nearest_neighbour.py

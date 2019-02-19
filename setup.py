@@ -14,11 +14,11 @@ the ACS PSF
 #sudo python setup.py sdist upload -r pypi
 
 version='0.0.1'
-packages = ['pyTinyTim']
-package_dir = {'pyTinyTim':'src'}
+packages = ['pyTinyTim','IDL','cCode']
+package_dir = {'pyTinyTim':'src',
+               'IDL':'lib/IDL',
+               'cCode':'lib/cCode'}
     
-package_data = {'pyTinyTim': ['lib/IDL/*',\
-                              'lib/cCode/*']}
     
 INCDIRS=['.']
 
@@ -29,7 +29,6 @@ setup   (       name            = "pyTinyTim",
                 description     = "pyTinyTim module",
                 packages        = packages,
                 package_dir     = package_dir,
-                package_data    = package_data,
                 license         = 'MIT',
                 url = 'https://github.com/davidharvey1986/pyTinyTim', # use the URL to the github repo
                 download_url = 'https://github.com/davidharvey1986/pyTinyTim/archive/'+version+'.tar.gz',
