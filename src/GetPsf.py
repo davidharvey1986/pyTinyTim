@@ -18,8 +18,7 @@ def main( hstFilter='F814W'):
 
 
 def getPSF( galaxy ):
-    DataDir='/Users/DavidHarvey/Documents/Work/pyHST/SLACS'
-    TargetDir=DataDir+'/'+galaxy['Target']+'/'
+    TargetDir=galaxy['Target']+'/'
     TargetImage = galaxy['Target']+'_'+galaxy['Filter']+'_drz_sci.fits'
     print TargetImage
     if not os.path.isfile(TargetDir+'/FocusArray.txt'):

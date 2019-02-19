@@ -2,8 +2,8 @@ src
 lib
 lib/cCode
 lib/IDL
-src/__init__.py
 src/getPsf.py
+src/__init__.py
 src/nearest_neighbour.py
 src/parseGalaxyList.py
 src/plotGalaxy.py

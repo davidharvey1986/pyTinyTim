@@ -218,8 +218,8 @@ pyTinyTim.egg-info/SOURCES.txt
 pyTinyTim.egg-info/dependency_links.txt
 pyTinyTim.egg-info/requires.txt
 pyTinyTim.egg-info/top_level.txt
-src/GetPsf.py
 src/__init__.py
+src/getPsf.py
 src/nearest_neighbour.py
 src/parseGalaxyList.py
 src/plotGalaxy.py

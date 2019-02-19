@@ -18,8 +18,6 @@ def tinytim_main( cluster, filterName, ra=None, dec=None,
 
     '''
 
-    #0 Set up environment
-    #setup_environment( cluster)
     #1. get coordinates
     if ra is None:
         ra, dec = tinytim_radec_grid( cluster )
@@ -38,17 +36,4 @@ def tinytim_main( cluster, filterName, ra=None, dec=None,
 
 
 
-def setup_environment( cluster, datadir=None, ttdir=None, 
-                       cluster_type='relaxed', hst_filter='F814W' ):
 
-    if datadir is None:
-        datadir='/Users/DavidHarvey/Documents/Work/Mergers/data/'+cluster_type+'/'+cluster+'/shape/'
-    if ttdir is None:
-        ttdir='/Users/DavidHarvey/Documents/Work/CLASH_PSF/clusters/'+cluster
-
-    os.system('mkdir -p '+ttdir+'/'+hst_filter)
-    os.system('cp '+datadir+'/*flt*.fits '+ttdir+'/'+hst_filter)
-    os.system('cp '+datadir+'/'+cluster+'*drz_sci*.fits '+ttdir+'/'+hst_filter)
-    os.system('cp '+datadir+'/FocusArray.txt '+ttdir+'/'+hst_filter)
-        
-    

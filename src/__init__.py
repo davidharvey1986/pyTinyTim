@@ -6,4 +6,4 @@ from tinytim_flt import *
 from postage_stamp import *
 from plotGalaxy import *
 from parseGalaxyList import *
-from getPSF import *
+from getPsf import *
