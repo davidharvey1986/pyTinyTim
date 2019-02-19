@@ -8,8 +8,9 @@ import os as os
 import pyfits as fits
 from parseGalaxyList import *
 import sys
-def main( galaxyList='Galaxies.lis'):
-    GalaxyList = parseGalaxyList( filename=galaxyList))
+def main( hstFilter='F814W'):
+    GalaxyList = parseGalaxyList( filename='Galaxies.lis', \
+                                      hstFilter=hstFilter)
 
         
     for iGalaxy in GalaxyList:
