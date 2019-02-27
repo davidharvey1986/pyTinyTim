@@ -2,7 +2,6 @@ import numpy as np
 import pyfits as py
 import RRGtools as at
 import pyRRG as rrg
-import ipdb as pdb
 import glob as glob
 import os as os
 '''
