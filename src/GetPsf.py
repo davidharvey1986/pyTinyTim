@@ -10,7 +10,7 @@ from parseGalaxyList import *
 import sys
 from pyTinyTim import *
 def main( galaxyList='Galaxies.lis'):
-    GalaxyList = parseGalaxyList( filename=galaxyList)
+    GalaxyList = parseGalaxyList.parseGalaxyList( filename=galaxyList)
 
         
     for iGalaxy in GalaxyList:

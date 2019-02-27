@@ -1,7 +1,9 @@
 from pyTinyTim import *
 import os as os
 import glob as glob
-import ipdb as pdb
+from tinytim_flt import tinytim_flt
+from tinytim_change_header import tinytim_change_header
+from tinytim_drizzle import tinytim_drizzle
 def tinytim_main( cluster, filterName, ra=None, dec=None,
                       pixel_scale=0.03,
                       drizzle_kernel='square',\
